@@ -1,0 +1,111 @@
+#home {
+    font-family: 'Fresca', sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 200px;
+    height: 875px;
+    top: -136px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* Ensure any overflow is hidden */
+}
+
+#home::before {
+    content: "";
+    background: url('./images/Eziphoto1.jpg') no-repeat center center/cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Make it cover the entire height */
+    z-index: -2; /* Place it behind everything */
+}
+
+#home::after {
+    content: "";
+    background-color: rgba(4, 45, 137, 0.51); /* Your desired background color */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Make it cover the entire height */
+    z-index: -1; /* Place it above the background image but behind the text */
+}
+
+#home h1 {
+    font-size: 3.2rem;
+    text-align: center;
+    color: white;
+    position: relative; /* Ensure it stays on top */
+    z-index: 1; /* Ensure it stays above the pseudo-element backgrounds */
+    padding: 20px; /* Add padding for better spacing */
+}
+
+.animated-text {
+    display: inline-block;
+    color: rgb(33, 155, 255);
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 0em solid blue; /* Cursor effect */
+    animation: typewriter 3s steps(30) 1s infinite normal both, blinkTextCursor 500ms steps(30) infinite normal;
+}
+
+@keyframes typewriter {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
+@keyframes blinkTextCursor {
+    from { border-right-color: blue; }
+    to { border-right-color: transparent; }
+}
+
+.animated-text::after {
+    content: "Web Design"; /* Initial content */
+    animation: changeText 12s infinite;
+    display: inline-block;
+}
+
+@keyframes changeText {
+    0%{ content: "Web Design"; }
+    25% { content: "Social Skills"; }
+    50% { content: "Marketing"; }
+    75% { content: "Programming"; }
+}
+
+
+#home .input1{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#home input{
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 20px;
+    justify-content: center;
+    width: 50%; /* Adjust width as needed */ /* Max width for better responsiveness */
+    color: black; /* Ensure text inside the input is visible */
+    background-color: white; /* Provide a background color */
+    border: none;
+    border-radius: 5px;
+    z-index: 2;
+}
+
+#home .p1{
+    font-size: 1.8rem;
+    text-align: center;
+    color: white;
+    position: relative; /* Ensure it stays on top */
+    z-index: 2;
+}
+
+#home .p2{
+    font-size: 1.3rem;
+    text-align: center;
+    color: white;
+    position: relative; /* Ensure it stays on top */
+    z-index: 2;
+}
